@@ -15,7 +15,8 @@
         margin: 0 auto;
       }
 
-      th,td {
+      th,
+      td {
         padding: 4px 32px;
         text-align: center;
       }
@@ -28,7 +29,16 @@
   </head>
   <body>
     <h2>订单确认</h2>
-    <table>
+
+    <script>
+      const price = +prompt("单价");
+      const count = +prompt("数量");
+      const address = prompt("地址");
+
+      const total = price * count;
+
+      document.write(`
+      <table>
       <thead>
         <tr>
           <th>商品名称</th>
@@ -39,12 +49,14 @@
         </tr>
         <tr>
           <td>小米青春plus</td>
-          <td>1999元</td>
-          <td>10</td>
-          <td>19990元</td>
-          <td>广东深圳</td>
+          <td>${price}元</td>
+          <td>${count}</td>
+          <td>${total}元</td>
+          <td>${address}</td>
         </tr>
       </thead>
     </table>
+      `);
+    </script>
   </body>
 </html>
